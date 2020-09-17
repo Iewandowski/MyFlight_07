@@ -1,4 +1,4 @@
-package exercicio01;
+package myFlight;
 import java.time.LocalDateTime;
 import java.time.Duration;
 public class Voo {
