@@ -18,4 +18,7 @@ public class Geo {
 		return longitude;
 	}
 
+	public String toString() {
+		return "(latitude: " + latitude + " longitude: " + longitude + ") ";
+	}
 }
