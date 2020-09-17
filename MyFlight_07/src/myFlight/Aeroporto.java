@@ -1,13 +1,15 @@
-package exercicio01;
+package myFlight;
 
-public class CiaAerea {
+public class Aeroporto {
 	
 	private String codigo;
 	private String nome;
+	private Geo loc;
 	
-	public CiaAerea(String codigo, String nome) {
+	public Aeroporto(String codigo, String nome, Geo loc) {
 		this.codigo = codigo;
 		this.nome = nome;
+		this.loc = loc;
 	}
 	
 	public String getCodigo() {
@@ -16,6 +18,10 @@ public class CiaAerea {
 	
 	public String getNome() {
 		return nome;
-	}	
+	}
+	
+	public Geo getLocal() {
+		return loc;
+	}
 
 }
