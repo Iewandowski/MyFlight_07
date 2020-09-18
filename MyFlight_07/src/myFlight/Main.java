@@ -6,88 +6,8 @@ import java.time.Duration;
 
 public class Main {
 	public static void main(String[] args) {		
-		
-		int escolha;
-		String codigo,nome;
-				
-		Scanner input = new Scanner(System.in);
-		
-		System.out.println("Bem-vindo(a) ao MyFlight! Digite a ação desejada:\n1-Gerenciar Sistema\n2-Conferir dados");
-		escolha = input.nextInt();
-		switch(escolha) {
-		case 1:
-			System.out.println("Digite o que deseja adicionar\n1-Adicionar Aeronave\n2-Adicionar Aeroporto\n3-Adicionar Companhia Aerea"
-					+ "\n4-Adicionar Rota\n5-Adicionar Voo\n0-Voltar");
-			escolha = input.nextInt();
-			
-			if (escolha == 1) {
-				GerenciadorAeronaves gerAircraft = GerenciadorAeronaves.getInstance();
-				System.out.println("Você escolheu adicionar uma aeronave\n");
-				
-				System.out.println("Digite o código: ");
-				codigo = input.next();
-				
-				System.out.println("Digite a descrição: ");
-				String descricao = input.next();
-				
-				gerAircraft.adicionar(new Aeronave(codigo , descricao));
-			}
-			
-			if (escolha == 2) {
-				GerenciarGeo gerGeo = GerenciarGeo.getInstance();
-				Geo geo01 = new Geo(100 , 200);
-				GerenciadorAeroportos gerAirport = GerenciadorAeroportos.getInstance();
-				
-				gerGeo.adicionar(geo01);
-				System.out.println("Você escolheu adicionar um aeroporto\n");
-				
-				System.out.println("Digite o código: ");
-				codigo = input.next();
-				
-				gerGeo.listar();
-				System.out.println("Digite o nome: ");
-				nome = input.next();
-				
-				gerAirport.adicionar(new Aeroporto(codigo, nome, geo01));			
-			}
-			
-			if (escolha == 3) {
-				GerenciadorCias gerEmpresas = GerenciadorCias.getInstance();
 
-				System.out.println("Você escolheu adicionar uma Companhia Aerea\n");
-				
-				System.out.println("Digite o código: ");
-				codigo = input.next();
-				
-				System.out.println("Digite o nome: ");
-				nome = input.next();
-				
-				gerEmpresas.adicionar(new CiaAerea(codigo , nome));
-			}
-			
-			if (escolha == 4) {
-				GerenciadorCias gerEmpresas = GerenciadorCias.getInstance();
-
-				System.out.println("Você escolheu adicionar uma Rota\n");
-				
-				gerEmpresas.listar();
-				System.out.println("Digite a companhia: ");
-				String companhia = input.next();
-				
-				System.out.println("Digite a aeronave: ");
-				String aeronave = input.next();
-				
-				gerRota.adicionar(new Rota(companhia, air1, air2, craft1));
-			}
-			break;
-		case 2:
-			System.out.println("Digite o que deseja adicionar\n1-Conferir Aeronaves\n2-Conferir Aeroportos\n3-Conferir Companhias Aereas"
-					+ "\n4-Conferir Rotas\n5-Conferir Voos\n0-Voltar");
-			escolha = input.nextInt();
-			
-		}
-		
-	/*	//criando Geo
+		//criando Geo
 		Geo teste = new Geo(100 , 200);
 		
 		///////////////////////////////////////////////////////////
@@ -145,7 +65,7 @@ public class Main {
 		
 		gerEmpresas.listar();
 		///////////////////////////////////////////////////////////
-		System.out.println("\n \n");		
+		System.out.println("\n \n");        
 		System.out.println("-----> GERENCIADOR ROTA: <-----");
 		GerenciadorRotas gerRota = GerenciadorRotas.getInstance();
 		
@@ -159,7 +79,7 @@ public class Main {
 		
 		gerRota.listar();
 		///////////////////////////////////////////////////////////
-		System.out.println("\n \n");		
+		System.out.println("\n \n");        
 		System.out.println("-----> GERENCIADOR VOO: <-----");
 		GerenciadorVoos gerVoo = GerenciadorVoos.getInstance();
 		
@@ -179,6 +99,6 @@ public class Main {
 		gerVoo.adicionar(voo02);
 		gerVoo.adicionar(voo03);
 		
-		gerVoo.listar(); */
+		gerVoo.listar();
 	}
 }
