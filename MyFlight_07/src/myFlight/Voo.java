@@ -35,4 +35,9 @@ public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
 	public void setStatus(Status novo) {
 		this.status = novo;
 	}
+	
+	public String toString() {
+		return "Rota: " + rota + " Data e Hora: " + datahora + " Duração: " + duracao + "Status: " + status;
+	}
+
 }
