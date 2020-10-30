@@ -1,6 +1,7 @@
 package myFlight;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GerenciadorRotas {
 	private ArrayList<Rota> rota;
@@ -33,6 +34,10 @@ public class GerenciadorRotas {
 		System.out.println("Cadastro de Aeronaves: ");
 		for (Rota route: rota) {
 			System.out.println(route);
-		}
+		}		
 	}
+	
+	public void ordenaDescricao() {
+        Collections.sort(rota);
+    }
 }

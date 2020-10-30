@@ -1,9 +1,10 @@
 package myFlight;
 import java.time.LocalDateTime;
 import java.time.Duration;
-public class Voo {
+public abstract class Voo {
 public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
 	
+	private LocalDateTime datahora01;
 	private LocalDateTime datahora;
 	private Duration duracao;
 	private Rota rota;
@@ -13,20 +14,35 @@ public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
 		this.rota = rota;
 		this.datahora = datahora;
 		this.duracao = duracao;
-		this.status = Status.CONFIRMADO; // default é confirmado
+		this.status = Status.CONFIRMADO;
 	}
 	
-	public Rota getRota() {
-		return rota;
+	public Voo(LocalDateTime datahora) {
+		this.datahora = datahora;
+		this.status = Status.CONFIRMADO;
 	}
+	
+	public Voo(Rota rota, Duration duracao) {
+		datahora01 = LocalDateTime.of(2020, 8, 12, 12, 00);
+		this.rota = rota;
+		datahora = datahora01;
+		this.duracao = duracao;
+		this.status = Status.CONFIRMADO;
+	}
+	
+	public Voo(LocalDateTime datahora, Duration duracao) {
+		this.datahora = datahora;
+		this.duracao = duracao;
+		this.status = Status.CONFIRMADO; 
+	}	
+	
+	public abstract Rota getRota();
 	
 	public LocalDateTime getDatahora() {
 		return datahora;
 	}
 	
-	public Duration getDuracao() {
-		return duracao;
-	}
+	public abstract Duration getDuracao();
 	
 	public Status getStatus() {
 		return status;
@@ -37,7 +53,6 @@ public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
 	}
 	
 	public String toString() {
-		return "Rota: " + rota + " Data e Hora: " + datahora + " Duração: " + duracao + "Status: " + status;
+		return "-> Data e Hora: " + datahora + "\n-> Status: " + status;
 	}
-
 }

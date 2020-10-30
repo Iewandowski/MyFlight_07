@@ -1,6 +1,6 @@
 package myFlight;
 
-public class Aeroporto {
+public class Aeroporto implements Comparable<Aeroporto>{
 	
 	private String codigo;
 	private String nome;
@@ -23,6 +23,11 @@ public class Aeroporto {
 	public Geo getLocal() {
 		return loc;
 	}
+	
+	 public int compareTo(Aeroporto outra)
+	 {
+	     return nome.compareTo(outra.nome);
+	 }
 	
 	public String toString() {
 		return "Codigo: " + codigo + " Nome: " + nome + " Local: " + loc;

@@ -1,6 +1,7 @@
 package myFlight;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GerenciadorAeroportos {
 	
@@ -36,5 +37,9 @@ public class GerenciadorAeroportos {
 		for (Aeroporto airport: aeroporto) {
 			System.out.println(airport);
 		}
-	}	
+	}
+	
+	public void ordenaDescricao() {
+        Collections.sort(aeroporto);
+    }
 }

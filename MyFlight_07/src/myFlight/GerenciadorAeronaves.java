@@ -1,10 +1,11 @@
 package myFlight;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class GerenciadorAeronaves {
-private ArrayList<Aeronave> aeronave;
-	
+	private ArrayList<Aeronave> aeronave;	
 	private static GerenciadorAeronaves instance;
 	
 	private GerenciadorAeronaves() {
@@ -36,5 +37,8 @@ private ArrayList<Aeronave> aeronave;
 			System.out.println(aircraft);
 		}
 	}
-
+	
+	public void ordenaDescricao() {
+        Collections.sort(aeronave);
+    }
 }
